@@ -53,10 +53,10 @@ export default function Nav({height}){
                     <Hamburguer toggleAction={toggleMobileMenu} close={mobileMenu}/>
                 </span>
                 <div className={(mobileMenu ? " backdrop-filter backdrop-blur-md mt-6" : " -translate-y-96 ") + " flex transform justify-around items-center flex-col transition-all border-blue border-t border-b w-full py-4 z-10 bg-opacity-70 shadow-md md:shadow-none md:translate-y-0  md:flex-row md:w-full md:bg-transparent md:py-0 md:mt-0 md:backdrop-blur-none md:border-none"}>
-                    <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
-                    <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
-                    <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
-                    <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
+                    <NavLink text={"Page d'accueil"} link='/' closeAction={closeMobileMenu}/>
+                    <NavLink text={'Jornal Le Porc'} link='/jornal' closeAction={closeMobileMenu}/>
+                    <NavLink text={"Soirée d'Adieu"} link='/videos' closeAction={closeMobileMenu}/>
+                    <NavLink text={'Des photos'} link='/photos' closeAction={closeMobileMenu}/>
                 </div>
             </div>
         </div>

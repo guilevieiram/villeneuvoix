@@ -6,7 +6,7 @@
 
 @layer base {
     * {
-        @apply font-body text-light;
+        @apply font-body text-light select-none;
     }
     h1 {
         @apply font-title text-4xl py-4;
@@ -15,6 +15,6 @@
         @apply font-subtitle italic font-light text-2xl py-4;
     }
     .button{
-        @apply py-2 px-8 m-2 w-full font-bold rounded-full transform transition-all filter hover:-translate-y-2;
+        @apply flex justify-center items-center py-2 px-8 m-2 w-full font-bold rounded-full transform transition-all filter hover:-translate-y-2;
     }
 }

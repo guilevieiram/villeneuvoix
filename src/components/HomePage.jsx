@@ -49,9 +49,9 @@ function CarrousselBalls ({numberBalls, selectedBall, changeImage}){
 function NavButtons(){
     return (
         <div className='flex flex-wrap justify-around items-center my-4 w-full'>
-            <button className='button bg-yellow text-dark'>Journal Le Porc</button>
-            <button className='button border border-blue text-blue'>Soirée d'Adieu</button>
-            <button className='button border border-blue text-blue'>Des photos</button>
+            <a href="/journal" className='button bg-yellow text-dark'>Journal Le Porc</a>
+            <a href="/videos" className='button border border-blue text-blue'>Soirée d'Adieu</a>
+            <a href="/photos" className='button border border-blue text-blue'>Des photos</a>
         </div>
     )
 };
