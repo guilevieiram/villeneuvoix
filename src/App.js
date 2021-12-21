@@ -3,7 +3,8 @@ import {
 	Nav,
 	Footer,
 	HomePage,
-	NotFoundPage
+	NotFoundPage,
+	VideosPage
 } from './components';
 
 import {
@@ -21,10 +22,11 @@ export default function App() {
 			<Nav height={navBarHeight} />
 			<Footer height={footerBarHeight} />
 
-			<div className={`max-w-3xl w-full min-h-screen px-8 py-4 pt-${navBarHeight} pb-${footerBarHeight}`}>
+			<div className={`max-w-3xl w-full min-h-screen px-3 py-4 pt-${navBarHeight} pb-${footerBarHeight}`}>
 				<Router>
 					<Routes>
 						<Route path="/" element={<HomePage />}/>
+						<Route path="/videos" element={<VideosPage />} />
 						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Router>

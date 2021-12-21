@@ -9,10 +9,10 @@
         @apply font-body text-light;
     }
     h1 {
-        @apply font-title text-4xl;
+        @apply font-title text-4xl py-4;
     }
     h2 {
-        @apply font-subtitle italic font-light text-2xl;
+        @apply font-subtitle italic font-light text-2xl py-4;
     }
     .button{
         @apply py-2 px-8 m-2 w-full font-bold rounded-full transform transition-all filter hover:-translate-y-2;

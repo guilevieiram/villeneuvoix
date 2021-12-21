@@ -3,6 +3,7 @@ import NotFoundPage from "./NotFoundPage";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import HomePage from "./HomePage";
+import VideosPage from "./VideosPage";
 
 
 export {
@@ -11,4 +12,5 @@ export {
     Nav,
     Footer,
     HomePage,
+    VideosPage,
 };
