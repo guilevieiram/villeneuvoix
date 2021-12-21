@@ -14,4 +14,7 @@
     h2 {
         @apply font-subtitle italic font-light;
     }
+    .button{
+        @apply py-2 px-8 m-2 w-full font-bold rounded-full transform transition-all filter hover:-translate-y-2;
+    }
 }

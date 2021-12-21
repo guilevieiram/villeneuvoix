@@ -46,13 +46,13 @@ export default function Nav({height}){
     useOnClickOutside(ref, () => setMobileMenu(false))
 
     return (
-        <div ref={ref} className={`flex justify-around flex-col fixed top-0 right-0 w-screen text-sm min-h-${height} transform translate-y-0 translate-x-0 border-yellow backdrop-filter md:backdrop-blur-md md:bg-opacity-70 z-50 md:border-b `}>
+        <div ref={ref} className={`flex justify-around flex-col fixed top-0 right-0 w-screen text-sm min-h-${height} transform translate-y-0 translate-x-0 border-yellow backdrop-filter md:shadow-md  md:backdrop-blur-md md:bg-opacity-70 z-50 md:border-b `}>
             <div className="flex justify-around items-center flex-col md:flex-row ">
-                <span className="flex items-center justify-around w-full backdrop-blur-md backdrop-filter bg-opacity-70 border-yellow border-b md:bg-transparent md:backdrop-blur-none md:border-none z-60">
+                <span className="flex items-center justify-around w-full backdrop-blur-md backdrop-filter bg-opacity-70 border-yellow border-b shadow-md md:shadow-none md:bg-transparent md:backdrop-blur-none md:border-none z-60">
                     <img src={icon} alt="" className="my-4 ml-4 mr-12 h-8 cursor-pointer  select-none" />
                     <Hamburguer toggleAction={toggleMobileMenu} close={mobileMenu}/>
                 </span>
-                <div className={(mobileMenu ? " backdrop-filter backdrop-blur-md mt-6" : " -translate-y-96 ") + " flex transform justify-around items-center flex-col transition-all border-blue border-t border-b w-full py-4 z-10 bg-opacity-70 md:translate-y-0  md:flex-row md:w-full md:bg-transparent md:py-0 md:mt-0 md:backdrop-blur-none md:border-none"}>
+                <div className={(mobileMenu ? " backdrop-filter backdrop-blur-md mt-6" : " -translate-y-96 ") + " flex transform justify-around items-center flex-col transition-all border-blue border-t border-b w-full py-4 z-10 bg-opacity-70 shadow-md md:shadow-none md:translate-y-0  md:flex-row md:w-full md:bg-transparent md:py-0 md:mt-0 md:backdrop-blur-none md:border-none"}>
                     <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
                     <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
                     <NavLink text={'Test Link'} link='#' closeAction={closeMobileMenu}/>
