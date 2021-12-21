@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/villeneuvoix/static/css/main.91b03f4c.chunk.css",
-    "main.js": "/villeneuvoix/static/js/main.f9db6d5a.chunk.js",
-    "main.js.map": "/villeneuvoix/static/js/main.f9db6d5a.chunk.js.map",
-    "runtime-main.js": "/villeneuvoix/static/js/runtime-main.83d2c418.js",
-    "runtime-main.js.map": "/villeneuvoix/static/js/runtime-main.83d2c418.js.map",
-    "static/js/2.b85d2181.chunk.js": "/villeneuvoix/static/js/2.b85d2181.chunk.js",
-    "static/js/2.b85d2181.chunk.js.map": "/villeneuvoix/static/js/2.b85d2181.chunk.js.map",
-    "static/js/3.5464b644.chunk.js": "/villeneuvoix/static/js/3.5464b644.chunk.js",
-    "static/js/3.5464b644.chunk.js.map": "/villeneuvoix/static/js/3.5464b644.chunk.js.map",
+    "main.css": "/villeneuvoix/static/css/main.2671b59d.chunk.css",
+    "main.js": "/villeneuvoix/static/js/main.96f2aafc.chunk.js",
+    "main.js.map": "/villeneuvoix/static/js/main.96f2aafc.chunk.js.map",
+    "runtime-main.js": "/villeneuvoix/static/js/runtime-main.0341e552.js",
+    "runtime-main.js.map": "/villeneuvoix/static/js/runtime-main.0341e552.js.map",
+    "static/js/2.7f13bd9c.chunk.js": "/villeneuvoix/static/js/2.7f13bd9c.chunk.js",
+    "static/js/2.7f13bd9c.chunk.js.map": "/villeneuvoix/static/js/2.7f13bd9c.chunk.js.map",
+    "static/js/3.d0b6f248.chunk.js": "/villeneuvoix/static/js/3.d0b6f248.chunk.js",
+    "static/js/3.d0b6f248.chunk.js.map": "/villeneuvoix/static/js/3.d0b6f248.chunk.js.map",
     "index.html": "/villeneuvoix/index.html",
-    "static/css/main.91b03f4c.chunk.css.map": "/villeneuvoix/static/css/main.91b03f4c.chunk.css.map",
-    "static/js/2.b85d2181.chunk.js.LICENSE.txt": "/villeneuvoix/static/js/2.b85d2181.chunk.js.LICENSE.txt",
+    "static/css/main.2671b59d.chunk.css.map": "/villeneuvoix/static/css/main.2671b59d.chunk.css.map",
+    "static/js/2.7f13bd9c.chunk.js.LICENSE.txt": "/villeneuvoix/static/js/2.7f13bd9c.chunk.js.LICENSE.txt",
     "static/media/arrow-l.f3d11621.svg": "/villeneuvoix/static/media/arrow-l.f3d11621.svg",
     "static/media/arrow-r.e3003052.svg": "/villeneuvoix/static/media/arrow-r.e3003052.svg",
     "static/media/icon.76b86090.svg": "/villeneuvoix/static/media/icon.76b86090.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.83d2c418.js",
-    "static/js/2.b85d2181.chunk.js",
-    "static/css/main.91b03f4c.chunk.css",
-    "static/js/main.f9db6d5a.chunk.js"
+    "static/js/runtime-main.0341e552.js",
+    "static/js/2.7f13bd9c.chunk.js",
+    "static/css/main.2671b59d.chunk.css",
+    "static/js/main.96f2aafc.chunk.js"
   ]
 }
