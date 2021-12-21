@@ -1,5 +1,6 @@
 import { 
-	Background
+	Background,
+	Nav
 } from './components';
 
 import {
@@ -9,13 +10,47 @@ import {
 } from 'react-router-dom';
 
 export default function App() {
+	const navBarHeight = 20;
   	return (
   		<div className="flex justify-center">
 			  <Background />
-			  <div className="max-w-xl w-full px-8 py-4">
+			  <Nav height={navBarHeight} />
+
+			  <div className={`max-w-xl w-full px-8 py-4 pt-${navBarHeight}`}>
 				  <Router>
 					  <Routes>
-						  	<Route path="/" element={<h1>hello world</h1>}/>
+						  	<Route path="/" element={
+								  <>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+							  <h1>hello world asodifn aosdif</h1>
+								  </>
+							  }/>
 					  </Routes>
 				  </Router>
 			  </div>
