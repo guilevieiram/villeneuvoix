@@ -23,7 +23,7 @@ function NavLink({text, link, closeAction}) {
     )
 };
 
-export default function Nav({height}){
+export default function Nav({}){
     const [mobileMenu, setMobileMenu] = useState(false);
     const toggleMobileMenu = () => setMobileMenu(!mobileMenu);
     const closeMobileMenu = () => setMobileMenu(false)
@@ -32,7 +32,7 @@ export default function Nav({height}){
     useOnClickOutside(ref, () => setMobileMenu(false))
 
     return (
-        <div ref={ref} className={`flex justify-around items-center flex-col fixed top-0 right-0 w-screen text-sm min-h-${height} transform translate-y-0 translate-x-0 border-yellow backdrop-filter bg-opacity-70 md:bg-dark md:shadow-md  md:backdrop-blur-md md:bg-opacity-70 z-50 md:border-b `}>
+        <div ref={ref} className={`flex justify-around items-center flex-col fixed top-0 right-0 w-screen text-sm  transform translate-y-0 translate-x-0 border-yellow backdrop-filter bg-opacity-70 md:bg-dark md:shadow-md  md:backdrop-blur-md md:bg-opacity-70 z-50 md:border-b `}>
             <div className="flex justify-around items-center flex-col md:flex-row max-w-4xl w-full">
                 <span className="flex items-center justify-around w-full backdrop-blur-md backdrop-filter bg-opacity-70 bg-dark border-yellow border-b shadow-md md:shadow-none md:bg-transparent md:backdrop-blur-none md:bg-none md:border-none z-60">
                     <img src={icon} alt="" className="my-4 ml-4 mr-12 h-8 cursor-pointer  select-none" />
