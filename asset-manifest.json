@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/villeneuvoix/static/css/main.2671b59d.chunk.css",
-    "main.js": "/villeneuvoix/static/js/main.ba1041b7.chunk.js",
-    "main.js.map": "/villeneuvoix/static/js/main.ba1041b7.chunk.js.map",
+    "main.js": "/villeneuvoix/static/js/main.885cad46.chunk.js",
+    "main.js.map": "/villeneuvoix/static/js/main.885cad46.chunk.js.map",
     "runtime-main.js": "/villeneuvoix/static/js/runtime-main.0341e552.js",
     "runtime-main.js.map": "/villeneuvoix/static/js/runtime-main.0341e552.js.map",
-    "static/js/2.ab8ae4dc.chunk.js": "/villeneuvoix/static/js/2.ab8ae4dc.chunk.js",
-    "static/js/2.ab8ae4dc.chunk.js.map": "/villeneuvoix/static/js/2.ab8ae4dc.chunk.js.map",
+    "static/js/2.1bd76bc4.chunk.js": "/villeneuvoix/static/js/2.1bd76bc4.chunk.js",
+    "static/js/2.1bd76bc4.chunk.js.map": "/villeneuvoix/static/js/2.1bd76bc4.chunk.js.map",
     "static/js/3.d0b6f248.chunk.js": "/villeneuvoix/static/js/3.d0b6f248.chunk.js",
     "static/js/3.d0b6f248.chunk.js.map": "/villeneuvoix/static/js/3.d0b6f248.chunk.js.map",
     "index.html": "/villeneuvoix/index.html",
     "static/css/main.2671b59d.chunk.css.map": "/villeneuvoix/static/css/main.2671b59d.chunk.css.map",
-    "static/js/2.ab8ae4dc.chunk.js.LICENSE.txt": "/villeneuvoix/static/js/2.ab8ae4dc.chunk.js.LICENSE.txt",
+    "static/js/2.1bd76bc4.chunk.js.LICENSE.txt": "/villeneuvoix/static/js/2.1bd76bc4.chunk.js.LICENSE.txt",
     "static/media/arrow-l.f3d11621.svg": "/villeneuvoix/static/media/arrow-l.f3d11621.svg",
     "static/media/arrow-r.e3003052.svg": "/villeneuvoix/static/media/arrow-r.e3003052.svg",
     "static/media/icon.76b86090.svg": "/villeneuvoix/static/media/icon.76b86090.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0341e552.js",
-    "static/js/2.ab8ae4dc.chunk.js",
+    "static/js/2.1bd76bc4.chunk.js",
     "static/css/main.2671b59d.chunk.css",
-    "static/js/main.ba1041b7.chunk.js"
+    "static/js/main.885cad46.chunk.js"
   ]
 }
