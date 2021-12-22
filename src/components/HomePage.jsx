@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import { YoutubeEmbed } from './elements';
+import {Link} from 'react-router-dom';
+import {YoutubeEmbed} from './elements';
 
 import displayInfo from '../data/carroussel-images.json';
 
@@ -49,9 +50,9 @@ function CarrousselBalls ({numberBalls, selectedBall, changeImage}){
 function NavButtons(){
     return (
         <div className='flex flex-wrap justify-around items-center my-4 w-full'>
-            <a href="/journal" className='button bg-yellow text-dark'>Journal Le Porc</a>
-            <a href="/videos" className='button border border-blue text-blue'>Soirée d'Adieu</a>
-            <a href="/photos" className='button border border-blue text-blue'>Des photos</a>
+            <Link to="/journal" className='button bg-yellow text-dark'>Journal Le Porc</Link>
+            <Link to="/videos" className='button border border-blue text-blue'>Soirée d'Adieu</Link>
+            <Link to="/photos" className='button border border-blue text-blue'>Des photos</Link>
         </div>
     )
 };
