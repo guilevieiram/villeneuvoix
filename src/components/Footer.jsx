@@ -1,4 +1,4 @@
-export default function Footer({}){
+export default function Footer(){
     return (
         <div className={`w-screen bg-blue text-sm absolute bottom-0 left-0 py-6 flex justify-around items-center`}>
             <p className="text-black">Tous les droits réservés.</p>

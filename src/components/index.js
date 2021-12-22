@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import HomePage from "./HomePage";
 import VideosPage from "./VideosPage";
 import PhotosPage from "./PhotosPage";
+import Journal from "./Journal";
 
 
 export {
@@ -15,5 +16,5 @@ export {
     HomePage,
     VideosPage,
     PhotosPage,
-
+    Journal,
 };

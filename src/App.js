@@ -5,7 +5,8 @@ import {
 	HomePage,
 	NotFoundPage,
 	VideosPage,
-	PhotosPage
+	PhotosPage,
+	Journal
 } from './components';
 
 import {
@@ -27,6 +28,7 @@ export default function App() {
 						<Route path="/" element={<HomePage />}/>
 						<Route path="/videos" element={<VideosPage />} />
 						<Route path="/photos" element={<PhotosPage />} />
+						<Route path="/journal/*" element={<Journal />} />
 						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Router>
