@@ -13,7 +13,7 @@ function Article({text}) {
             <h2>{subtitle}</h2>
             <p>Pour {author}</p>
             <p className="my-10">{resume}</p>
-            <a href={pdfLink} className="button border border-yellow text-yellow w-max my-10">Télecharger le PDF</a>
+            <a href={pdfLink} download={'pdf'} target="_blank" rel="noopener noreferrer" className="button border border-yellow text-yellow w-max my-10">Télecharger le PDF</a>
         </div>
     )
 };

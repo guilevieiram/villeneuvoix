@@ -32,7 +32,7 @@ function Photo ({link, description}) {
 
 function PhotoTable(){
     return (
-        <div className="flex flex-wrap my-10">
+        <div className="flex flex-wrap my-10 justify-center ">
             {
                 photosList.map(({link, description}, index) => <Photo key={index} link={link} description={description}/>)
             }
