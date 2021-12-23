@@ -26,7 +26,7 @@ export default function App() {
 			<div className={`max-w-3xl w-full min-h-screen px-3 py-4 my-12`}>
 				<Router>
 					<Background />
-					<Nav />
+					<Nav privateMode={privateMode}/>
 					<Footer />
 					<Routes>
 						<Route path="/" element={<HomePage privateMode={privateMode}/>}/>
