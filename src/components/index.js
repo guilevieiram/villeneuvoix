@@ -6,6 +6,7 @@ import HomePage from "./HomePage";
 import VideosPage from "./VideosPage";
 import PhotosPage from "./PhotosPage";
 import Journal from "./Journal";
+import LogIn from "./LogIn";
 
 
 export {
@@ -17,4 +18,5 @@ export {
     VideosPage,
     PhotosPage,
     Journal,
+    LogIn,
 };

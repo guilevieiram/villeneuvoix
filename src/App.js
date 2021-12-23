@@ -6,18 +6,20 @@ import {
 	NotFoundPage,
 	VideosPage,
 	PhotosPage,
-	Journal
+	Journal,
+	LogIn
 } from './components';
 
 import {
 	HashRouter as Router,
+	Navigate,
 	Route,
 	Routes
 } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function App() {
-	const [privateMode, setPrivateMode] = useState(true);
+	const [privateMode, setPrivateMode] = useState(false);
 
   	return (
   		<div className="flex justify-center relative overflow-x-hidden ">
@@ -31,6 +33,7 @@ export default function App() {
 						<Route path="/videos" element={<VideosPage privateMode={privateMode}/>} />
 						<Route path="/photos" element={<PhotosPage privateMode={privateMode}/>} />
 						<Route path="/journal/*" element={<Journal privateMode={privateMode}/>} />
+						<Route path="/login" element={privateMode ? <Navigate to="/"/> : <LogIn setPrivateMode={setPrivateMode}/>} />
 						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Router>
