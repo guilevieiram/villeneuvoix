@@ -58,8 +58,18 @@ function NavButtons(){
 };
 
 // Main page components
-function WelcomeBanner(){
+function WelcomeBanner({privateMode}){
     return (
+        privateMode ?
+        // secret component
+        <div className='flex flex-col justify-around items-start '>
+            <h1 className='mt-10'>X21 a Villeneuve-Sur-Lot en secret</h1>
+            <h2 className='my-6'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, fuga?</h2>
+            <p className='my-4 text-justify'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, commodi. Ipsum at praesentium sed possimus exercitationem dolorem assumenda, facere id voluptate consequatur dolorum similique ab, nihil, laboriosam aliquid dicta minima?</p>
+            <NavButtons />
+        </div>
+        :
+        // regular component
         <div className='flex flex-col justify-around items-start '>
             <h1 className='mt-10'>X21 en Villeneuve-Sur-Lot!</h1>
             <h2 className='my-6'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, fuga?</h2>
@@ -100,10 +110,10 @@ function Player(){
         </div>
     )
 }
-export default function HomePage() {
+export default function HomePage({privateMode}) {
     return (
         <div className='mb-20'> 
-            <WelcomeBanner />
+            <WelcomeBanner privateMode={privateMode} />
             <Carroussel displayList={displayInfo}/>
             <Player />
         </div>

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from './funcitons';
 import photosList from '../data/photos.json';
+import photosPrivateList from '../data/photos-private.json';
 
 
 function PagePhoto({reference, link, description}) {
@@ -30,22 +31,24 @@ function Photo ({link, description}) {
     )
 };
 
-function PhotoTable(){
+function PhotoTable({photos}){
     return (
         <div className="flex flex-wrap my-10 justify-center ">
             {
-                photosList.map(({link, description}, index) => <Photo key={index} link={link} description={description}/>)
+                photos.map(({link, description}, index) => <Photo key={index} link={link} description={description}/>)
             }
         </div>
     )
 };
 
-export default function PhotosPage(){
+export default function PhotosPage({privateMode}){
+    const photos = privateMode ? photosPrivateList : photosList;
+
     return( 
         <div className="flex flex-col justify-around items-start my-10">
             <h1>Des photos</h1>
             <h2>Vous pouvez trouvez un peau des photos qu'on a fait pendant notre periode en Villeneuve.</h2>
-            <PhotoTable />
+            <PhotoTable photos={photos}/>
         </div>
     )
 };

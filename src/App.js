@@ -14,8 +14,10 @@ import {
 	Route,
 	Routes
 } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function App() {
+	const [privateMode, setPrivateMode] = useState(true);
 
   	return (
   		<div className="flex justify-center relative overflow-x-hidden ">
@@ -25,10 +27,10 @@ export default function App() {
 					<Nav />
 					<Footer />
 					<Routes>
-						<Route path="/" element={<HomePage />}/>
-						<Route path="/videos" element={<VideosPage />} />
-						<Route path="/photos" element={<PhotosPage />} />
-						<Route path="/journal/*" element={<Journal />} />
+						<Route path="/" element={<HomePage privateMode={privateMode}/>}/>
+						<Route path="/videos" element={<VideosPage privateMode={privateMode}/>} />
+						<Route path="/photos" element={<PhotosPage privateMode={privateMode}/>} />
+						<Route path="/journal/*" element={<Journal privateMode={privateMode}/>} />
 						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 				</Router>

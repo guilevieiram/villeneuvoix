@@ -1,19 +1,20 @@
 import { useState } from "react";
 import {Route, Link, Routes} from "react-router-dom";
 import texts from "../data/texts.json";
+import textsPrivate from '../data/texts-private.json';
 
 function Article({text}) {
     const {title, subtitle, resume, author, pdfLink} = text;
     return (
         <div className="my-10">
-            <p className="transition-all transform hover:-translate-y-1 w-max my-10 text-yellow text-sm">
-                <Link to="/journal" > ◀   Revenir au jornal... </Link>
-            </p>
             <h1 className="">{title}</h1>
             <h2>{subtitle}</h2>
             <p>Pour {author}</p>
             <p className="my-10">{resume}</p>
             <a href={pdfLink} download={'pdf'} target="_blank" rel="noopener noreferrer" className="button border border-yellow text-yellow w-max my-10">Télecharger le PDF</a>
+            <p className="transition-all transform hover:-translate-y-1 w-max my-10 text-yellow text-sm">
+                <Link to="/journal" > &lt;&lt;  Revenir au jornal... </Link>
+            </p>
         </div>
     )
 };
@@ -24,7 +25,7 @@ function ArticlePreview({section, index, title, subtitle, author}) {
             <span className="flex flex-wrap justify-between">
                 <h1 className="py-1 text-2xl">{title}</h1>
                 <p className="text-sm text-yellow flex items-center justify-center transform transition-all hover:-translate-y-1">
-                    <Link to={`/journal/${section}/${index}`} className="text-yellow">Read more  ▶</Link>
+                    <Link to={`/journal/${section}/${index}`} className="text-yellow">Read more  &gt;&gt;</Link>
                 </p>
             </span>
             <h2 className="py-1 text-lg">{subtitle}</h2>
@@ -63,8 +64,9 @@ function SelectionBar({sections, selectedSection, setSelectedSection}) {
     )
 };
 
-export default function Journal(){
-    const sections = Object.keys(texts);
+export default function Journal({privateMode}){
+    const selectedTexts = privateMode ? textsPrivate : texts;
+    const sections = Object.keys(selectedTexts);
     const [selectedSection, setSelectedSection] = useState(sections[0]);
 
     return (
@@ -73,7 +75,7 @@ export default function Journal(){
                 {sections.map((sectionName, index) => 
                     <Route key={index} path={`/${sectionName}/*`} element={
                         <Routes>
-                            {texts[sectionName].map((text, innerIndex) =>
+                            {selectedTexts[sectionName].map((text, innerIndex) =>
                                 <Route key={innerIndex} path={`/${innerIndex}`} element={<Article text={text}/>} />
                             )}
                         </Routes>
@@ -86,7 +88,7 @@ export default function Journal(){
                         <h2>La voix de l'X21 à Villeneuve</h2>
                         <SelectionBar sections={sections} selectedSection={selectedSection} setSelectedSection={setSelectedSection}/>
                         <div className="w-full h-px bg-yellow"></div>
-                        <TextsPreviewColumn texts={texts} section={selectedSection}/>
+                        <TextsPreviewColumn texts={selectedTexts} section={selectedSection}/>
                     </div>
                 } />
             </Routes>

@@ -1,5 +1,6 @@
 import { YoutubeEmbed } from "./elements";
 import videosList from '../data/videos.json';
+import videosPrivateList from '../data/videos-private.json';
 
 function Video ({title, description, embedId}) {
     return (
@@ -12,14 +13,15 @@ function Video ({title, description, embedId}) {
     )
 };
 
-export default function VideosPage (){
+export default function VideosPage ({privateMode}){
+    const videos = privateMode ? videosPrivateList : videosList;
     return (
         <div className="my-10">
             <h1>La Soirée d'Adieu</h1>
             <h2>Malheureusement, en ligne ...</h2>
             <p className="py-4">On a preparé une compilation de videos pour célébré notre vie ici en Villeneuve-Sur-Lot!</p>
             {
-                videosList.map(({title, description, id}, index) => <Video key={index} title={title} description={description} embedId={id}/>)
+                videos.map(({title, description, id}, index) => <Video key={index} title={title} description={description} embedId={id}/>)
             }
         </div>
     )
