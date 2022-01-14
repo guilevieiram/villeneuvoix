@@ -16,7 +16,7 @@ function Hamburguer({toggleAction, close}) {
 
 function NavLink({text, link, closeAction}) {
     return (
-        <div onClick={closeAction} className='py-2 hover:text-yellow'>
+        <div onClick={closeAction} className='py-2 px-4 hover:text-yellow'>
             <Link to={link} >
                 {text}
             </Link>
@@ -33,19 +33,20 @@ export default function Nav({privateMode}){
     useOnClickOutside(ref, () => setMobileMenu(false))
 
     return (
-        <div ref={ref} className={`flex justify-around items-center flex-col fixed top-0 right-0 w-screen text-sm  transform translate-y-0 translate-x-0 border-yellow backdrop-filter bg-opacity-70 md:bg-dark md:shadow-md  md:backdrop-blur-md md:bg-opacity-70 z-50 md:border-b `}>
-            <div className="flex justify-around items-center flex-col md:flex-row max-w-4xl w-full">
-                <span className="flex items-center justify-around w-full backdrop-blur-md backdrop-filter bg-opacity-70 bg-dark border-yellow border-b shadow-md md:shadow-none md:bg-transparent md:backdrop-blur-none md:bg-none md:border-none z-60">
+        <div ref={ref} className="w-full backdrop-filter backdrop-blur fixed top-0 left-0 bg-dark bg-opacity-70">
+            <div className="w-full flex flex-col md:flex-row justify-between items-center">
+                <span className="flex justify-between items-center w-full md:w-auto px-6">
                     <img src={privateMode ? iconPrivate : icon} alt="" className="my-4 ml-4 mr-12 h-8 cursor-pointer  select-none" />
                     <Hamburguer toggleAction={toggleMobileMenu} close={mobileMenu}/>
                 </span>
-                <div className={(mobileMenu ? " backdrop-filter bg-dark backdrop-blur-md mt-6" : " -translate-y-96 ") + " flex transform justify-around items-center flex-col transition-all border-blue border-t border-b w-full py-4 z-10 bg-opacity-70 shadow-md md:shadow-none md:translate-y-0  md:flex-row md:w-full md:bg-transparent md:py-0 md:mt-0 md:backdrop-blur-none md:border-none"}>
+                <div className={mobileMenu ? "flex items-center flex-col md:flex-row my-6" : "flex flex-col md:flex-row h-0 opacity-0 md:h-auto md:opacity-100"}>
                     <NavLink text={"Page d'accueil"} link='/' closeAction={closeMobileMenu}/>
-                    <NavLink text={'Jornal Le Porc'} link='/journal' closeAction={closeMobileMenu}/>
-                    <NavLink text={"Soirée d'Adieu"} link='/videos' closeAction={closeMobileMenu}/>
-                    <NavLink text={'Des photos'} link='/photos' closeAction={closeMobileMenu}/>
+                    <NavLink text={'Journal'} link='/journal' closeAction={closeMobileMenu}/>
+                    <NavLink text={"Les Videos"} link='/videos' closeAction={closeMobileMenu}/>
+                    <NavLink text={'Album de photos'} link='/photos' closeAction={closeMobileMenu}/>
                 </div>
             </div>
+            <div className='w-full h-px bg-yellow'> </div>
         </div>
     )
 };

@@ -1,7 +1,14 @@
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from './funcitons';
-import photosList from '../data/photos.json';
-import photosPrivateList from '../data/photos-private.json';
+
+
+function importAll(r) {
+  const l = r.keys().map(r);
+  return l.map( obj => obj.default)
+}
+
+const photosList = importAll(require.context('../data/main-photos', false, /\.(png|jpeg|jpg|svg|heic)$/));
+const photosPrivateList = importAll(require.context('../data/secret-main-photos', false, /\.(png|jpeg|jpg|heic|svg)$/));
 
 
 function PagePhoto({reference, link, description}) {
@@ -35,7 +42,7 @@ function PhotoTable({photos}){
     return (
         <div className="flex flex-wrap my-10 justify-center ">
             {
-                photos.map(({link, description}, index) => <Photo key={index} link={link} description={description}/>)
+                photos.map((link, index) => <Photo key={index} link={link} description=""/>)
             }
         </div>
     )
@@ -46,8 +53,12 @@ export default function PhotosPage({privateMode}){
 
     return( 
         <div className="flex flex-col justify-around items-start my-10">
-            <h1>Des photos</h1>
-            <h2>Vous pouvez trouvez un peau des photos qu'on a fait pendant notre periode en Villeneuve.</h2>
+            <h1>Album de photos</h1>
+            {
+                privateMode ?
+                <h2>Ce sont des photos ... simplement ça</h2>:
+                <h2>Vous pouvez trouvez quelques photos que nous avons fait pendant notre période à Villeneuve.</h2>
+            }
             <PhotoTable photos={photos}/>
         </div>
     )

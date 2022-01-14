@@ -1,11 +1,20 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import {YoutubeEmbed} from './elements';
 
-import displayInfo from '../data/carroussel-images.json';
+import homeVideo from "../data/secret-videos/projetfim.mp4"
 
 import RightArrowImage from '../assets/arrow-r.svg';
 import LeftArrowImage from '../assets/arrow-l.svg';
+
+
+
+function importAll(r) {
+  const l = r.keys().map(r);
+  return l.map( obj => obj.default)
+}
+
+const displayPhotos = importAll(require.context('../data/carroussel-photos', false, /\.(png|jpeg|jpg|heic|svg)$/));
+const displayPhotosPrivate = importAll(require.context('../data/secret-carroussel-photos', false, /\.(png|jpeg|jpg|heic|svg)$/));
 
 const arrowImages = {
     right: RightArrowImage,
@@ -21,14 +30,6 @@ const Arrow = (side, func) => {
 const RightArrow = ({func}) => Arrow("right", func)
 const LeftArrow = ({func}) => Arrow("left", func)
 
-
-function Label({name}) {
-    return (
-        <div className="max-w-2xl w-full absolute  bottom-0 flex justify-end" >
-            <p className="text-light w-max mx-10 my-8 px-4 py-1 rounded-md shadow-md bg-dark bg-opacity-50 backdrop-blur-sm backdrop-filter ">{name}</p>
-        </div>
-    )
-};
 
 function Ball({selected, index, onClick}) {
     const func = index === selected ? ()=>{} : () => {onClick(index)};
@@ -50,9 +51,9 @@ function CarrousselBalls ({numberBalls, selectedBall, changeImage}){
 function NavButtons(){
     return (
         <div className='flex flex-wrap justify-around items-center my-4 w-full'>
-            <Link to="/journal" className='button bg-yellow text-dark'>Journal Le Porc</Link>
-            <Link to="/videos" className='button border border-blue text-blue'>Soirée d'Adieu</Link>
-            <Link to="/photos" className='button border border-blue text-blue'>Des photos</Link>
+            <Link to="/journal" className='button bg-yellow text-dark'>Journal</Link>
+            <Link to="/videos" className='button border border-blue text-blue'>Les Videos</Link>
+            <Link to="/photos" className='button border border-blue text-blue'>Album de photos</Link>
         </div>
     )
 };
@@ -63,17 +64,17 @@ function WelcomeBanner({privateMode}){
         privateMode ?
         // secret component
         <div className='flex flex-col justify-around items-start '>
-            <h1 className='mt-10'>X21 a Villeneuve-Sur-Lot en secret</h1>
-            <h2 className='my-6'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, fuga?</h2>
-            <p className='my-4 text-justify'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, commodi. Ipsum at praesentium sed possimus exercitationem dolorem assumenda, facere id voluptate consequatur dolorum similique ab, nihil, laboriosam aliquid dicta minima?</p>
+            <h1 className='mt-10'>Finalement la fin de cette merde!</h1>
+            <h2 className='my-6'>Ce sont fini les conneries de Valerie! Pour ne pas oublier tous qu'on a vécu cette ville nulle, on garde les meilleurs moments. Bien sûr, en secret</h2>
+            <p className='my-4 text-justify'>Voyez notre journal alternatif, Le Porc, ou bien les meilleurs photos et videos, sans censure. Si quelqu'un a quelque chose qu'il veut mettre ici, contacte-moi (Guile). Relax et profite.</p>
             <NavButtons />
         </div>
         :
         // regular component
         <div className='flex flex-col justify-around items-start '>
-            <h1 className='mt-10'>X21 en Villeneuve-Sur-Lot!</h1>
-            <h2 className='my-6'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, fuga?</h2>
-            <p className='my-4 text-justify'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, commodi. Ipsum at praesentium sed possimus exercitationem dolorem assumenda, facere id voluptate consequatur dolorum similique ab, nihil, laboriosam aliquid dicta minima?</p>
+            <h1 className='mt-10'>Les X21 à Villeneuve-Sur-Lot!</h1>
+            <h2 className='my-6'>Malheureusement, on arrive a la fin. Donc on vous laisse ce site, puisqu'on peut rappeler les meilleurs moments!</h2>
+            <p className='my-4 text-justify'>Ici vous pouvez trouver les photos, les videos et, bien sûr, le journal, que nous avons appelé Le VilleneuvoiX. C'était vraiment dure de choisir, entre tous nos très bons moments, quoi mettre sur le site. Donc, relaxez et profitez!</p>
             <NavButtons />
         </div>
     )
@@ -85,7 +86,7 @@ function Carroussel ({displayList}) {
     const changeToImage = (imageNumber) => setImageIndex(imageNumber);
     const imageComponents = displayList.map((item, index) => {
         new Image().src = item.image; 
-        return <img src={item.image} alt={displayList[index].name} className="object-cover h-screen w-full "></img>
+        return <img src={item} alt={index} className="object-cover h-screen w-full "></img>
     });
     const mod = (number, modulo) => ((number % modulo) + modulo ) % modulo;
 
@@ -96,26 +97,23 @@ function Carroussel ({displayList}) {
                 <CarrousselBalls numberBalls={numImages} selectedBall={imageIndex} changeImage={changeToImage}/>
                 <RightArrow func={() => setImageIndex(mod(imageIndex + 1, numImages))}/>
                 <LeftArrow func={() => setImageIndex(mod(imageIndex - 1, numImages))}/>
-                <Label name={displayList[imageIndex].name}/>
             </div>
         </div>
     )
 };
 
-function Player(){
-    return (
-        <div className='w-full my-8'>
-            <h2 className='my-4'>Regardez-nous!</h2>
-            <YoutubeEmbed embedId="rokGy0huYEA"/>
-        </div>
-    )
-}
 export default function HomePage({privateMode}) {
+    const photos = privateMode ? displayPhotosPrivate : displayPhotos
     return (
         <div className='mb-20'> 
             <WelcomeBanner privateMode={privateMode} />
-            <Carroussel displayList={displayInfo}/>
-            <Player />
+            <Carroussel displayList={photos}/>
+            {
+                privateMode ? 
+                <video className=" max-h-screen" controls>
+                    <source src={homeVideo} type="video/mp4"/>
+                </video> : <></>
+            }
         </div>
     )
 };
