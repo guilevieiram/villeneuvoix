@@ -33,7 +33,7 @@ export default function Nav({privateMode}){
     useOnClickOutside(ref, () => setMobileMenu(false))
 
     return (
-        <div ref={ref} className="w-full backdrop-filter backdrop-blur fixed top-0 left-0 bg-dark bg-opacity-70">
+        <div ref={ref} className="w-full backdrop-filter backdrop-blur fixed top-0 left-0 bg-dark bg-opacity-70 z-50">
             <div className="w-full flex flex-col md:flex-row justify-between items-center">
                 <span className="flex justify-between items-center w-full md:w-auto px-6">
                     <img src={privateMode ? iconPrivate : icon} alt="" className="my-4 ml-4 mr-12 h-8 cursor-pointer  select-none" />
