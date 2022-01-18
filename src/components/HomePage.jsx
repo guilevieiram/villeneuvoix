@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
-import homeVideo from "../data/secret-videos/projetfim.mp4"
+// import homePrivateVideo from "../data/secret-videos/projetfim.mp4"
+// import homeVideo from "../data/videos/.mp4"
 
 import RightArrowImage from '../assets/arrow-r.svg';
 import LeftArrowImage from '../assets/arrow-l.svg';
@@ -22,7 +23,7 @@ const arrowImages = {
 }
 const Arrow = (side, func) => {
     return (
-        <div className={` cursor-pointer flex items-center justify-${side==='left' ? 'start' : 'end' } absolute px-2 h-full w-1/2 ${side}-0 transform transition-all hover:-translate-y-2 select-none`} onClick={func}>
+        <div className={side === 'left'? " cursor-pointer flex items-center justify-start absolute px-2 h-full w-1/2 left-0 transform transition-all hover:-translate-y-2 select-none":" cursor-pointer flex items-center justify-end absolute px-2 h-full w-1/2 right-0 transform transition-all hover:-translate-y-2 select-none"} onClick={func}>
             <img src={arrowImages[side]} alt={`${side} arrow`} className="h-14 shadow-xl" />
         </div>
     )
@@ -108,12 +109,16 @@ export default function HomePage({privateMode}) {
         <div className='mb-20'> 
             <WelcomeBanner privateMode={privateMode} />
             <Carroussel displayList={photos}/>
-            {
+            {/* {
                 privateMode ? 
                 <video className=" max-h-screen" controls>
-                    <source src={homeVideo} type="video/mp4"/>
-                </video> : <></>
-            }
+                    <source src={homePrivateVideo} type="video/mp4"/>
+                </video> :
+                <></>
+                // <video className=" max-h-screen" controls>
+                //     <source src={homeVideo} type="video/mp4"/>
+                // </video>
+            } */}
         </div>
     )
 };
