@@ -109,16 +109,12 @@ export default function HomePage({privateMode}) {
         <div className='mb-20'> 
             <WelcomeBanner privateMode={privateMode} />
             <Carroussel displayList={photos}/>
-            {/* {
+            {
                 privateMode ? 
-                <video className=" max-h-screen" controls>
-                    <source src={homePrivateVideo} type="video/mp4"/>
-                </video> :
-                <></>
-                // <video className=" max-h-screen" controls>
-                //     <source src={homeVideo} type="video/mp4"/>
-                // </video>
-            } */}
+                <iframe className='m-auto' width="560" height="315" src="https://www.youtube.com/embed/jGrafR8Gmh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                :
+                <iframe className='m-auto' width="560" height="315" src="https://www.youtube.com/embed/1AH0ECQfCGU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            }
         </div>
     )
 };
